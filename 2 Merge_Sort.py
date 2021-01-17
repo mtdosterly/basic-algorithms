@@ -1,21 +1,21 @@
-def merge_sort(array,first,last):
+def merge_sort(array):
 
     import sys
 
     if len(array) > 1:
-        middle = (first + last)//2
+        middle = len(array)//2
         left = array[:middle]
         right = array[middle:]
 
-        merge_sort(left,0,len(left))
-        merge_sort(right,0,len(right))
+        merge_sort(left)
+        merge_sort(right)
 
         left.append(sys.maxsize)
         right.append(sys.maxsize)
 
         x = y = 0
 
-        for z in range(first,last):
+        for z in range(0,len(array)):
             if left[x] <= right[y]:
                 array[z] = left[x]
                 x += 1
